@@ -18,7 +18,7 @@ jobs:
 
     - name: Install dependencies and configure
       run: |
-          brew install cmake asciidoctor qt@5 argon2 botan@3.2.0-1 qrencode readline minizip
+          brew install cmake asciidoctor qt@5 argon2 botan@3.2.0 qrencode readline minizip
           mkdir build
           cd build
           cmake -DWITH_XC_ALL=ON -DWITH_TESTS=OFF ..
