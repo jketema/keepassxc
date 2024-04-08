@@ -2,7 +2,7 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ 'develop', 'release/2.7.x' ]
+    branches: [ 'develop' ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ 'develop' ]
@@ -12,7 +12,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    runs-on: 'macos-12'
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
       actions: read
