@@ -16,16 +16,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - if: matrix.language == 'cpp'
-      name: Install dependencies and configure
+    - name: Install dependencies and configure
       run: |
           brew install cmake asciidoctor qt@5 argon2 botan qrencode readline minizip
           mkdir build
           cd build
           cmake -DWITH_XC_ALL=ON -DWITH_TESTS=OFF ..
 
-    - if: matrix.language == 'cpp'
-      name: Build C++
+    - name: Build C++
       run: |
           cd build
           make
